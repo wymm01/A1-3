@@ -190,13 +190,48 @@ API 키가 외부에 노출된 경우 기존 키를 폐기하고 새로운 API �
 
 ## 💻 로컬 개발 환경
 
-프로젝트를 다운로드한 후 Python 패키지를 설치합니다.
+### 1. 프로젝트 다운로드
+
+GitHub 저장소를 클론하거나 프로젝트 파일을 다운로드합니다.
+
+```bash
+git clone https://github.com/wymm01/a1-3.git
+cd a1-3
+```
+
+### 2. Python 패키지 설치
+
+프로젝트에 필요한 Python 패키지를 설치합니다.
 
 ```bash
 pip install -r api/requirements.txt
 ```
 
-백엔드 API는 Vercel Serverless Functions 환경에서 실행됩니다.
+### 3. 환경 변수 설정
+
+로컬 환경에서 Gemini API를 사용하려면 `GEMINI_API_KEY` 환경 변수를 설정합니다.
+
+API 키는 소스 코드에 직접 작성하지 않습니다.
+
+### 4. Vercel CLI 설치
+
+Vercel 로컬 개발 환경을 사용하기 위해 Vercel CLI를 설치합니다.
+
+```bash
+npm install -g vercel
+```
+
+### 5. 로컬 개발 서버 실행
+
+프로젝트 폴더에서 다음 명령어를 실행합니다.
+
+```bash
+vercel dev
+```
+
+실행 후 터미널에 표시되는 로컬 주소로 접속하여 웹 서비스를 확인할 수 있습니다.
+
+백엔드 API는 `api/` 폴더의 Python Serverless Function을 통해 실행됩니다.
 
 ---
 
@@ -206,9 +241,9 @@ GitHub 저장소와 Vercel 프로젝트를 연결하여 배포합니다.
 
 GitHub의 `main` 브랜치에 변경사항을 `push`하면 Vercel에서 새로운 배포가 진행됩니다.
 
-배포된 서비스:
+### 배포 URL
 
-[AI Mixologist](https://a1-3-flax.vercel.app/)
+[AI Mixologist 바로가기](https://a1-3-flax.vercel.app/)
 
 ---
 
