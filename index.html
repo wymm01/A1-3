@@ -5,45 +5,47 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>AI 믹솔로지스트 - 맞춤 음료 추천</title>
   <link rel="stylesheet" href="css/style.css">
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+  </style>
 </head>
 <body>
-  <header>
-    <nav>
-      <div class="logo">AI Mixologist</div>
-      <ul>
-        <li><a href="#about">서비스 소개</a></li>
-        <li><a href="#recommend">AI 추천 받기</a></li>
-        <li><a href="#faq">FAQ</a></li>
-      </ul>
+  <header class="header">
+    <div class="logo">AI Mixologist</div>
+    <nav class="nav">
+      <a href="#about">서비스 소개</a>
+      <a href="#recommend">AI 추천 받기</a>
+      <a href="#faq">FAQ</a>
     </nav>
   </header>
 
-  <main>
-    <!-- 섹션 1: 서비스 소개 -->
+  <main class="container">
+    <!-- 1. 서비스 소개 섹션 -->
     <section id="about" class="hero">
       <h1>오늘 기분에 맞는 특별한 음료를 찾아보세요</h1>
       <p>AI 믹솔로지스트가 당신의 기분과 취향을 분석하여 최적의 음료 레시피를 추천해 드립니다.</p>
     </section>
 
-    <!-- 섹션 2: AI 기능 -->
+    <!-- 2. AI 추천 섹션 -->
     <section id="recommend" class="card">
       <h2>AI 맞춤 음료 추천</h2>
-      <form id="recommend-form">
-        <label for="mood">현재 기분 (필수)</label>
-        <input type="text" id="mood" placeholder="예: 우울함, 신남, 피곤함">
-
-        <label for="preference">선호 재료/취향 (선택)</label>
-        <input type="text" id="preference" placeholder="예: 상큼함, 탄산, 논알콜, 과일">
-
-        <button type="submit" id="submit-btn">추천받기</button>
+      <form id="recommendForm">
+        <div class="form-group">
+          <label for="mood">현재 기분 (필수)</label>
+          <input type="text" id="mood" placeholder="예: 우울함, 신남, 피곤함" required>
+        </div>
+        <div class="form-group">
+          <label for="preference">선호 재료/취향 (선택)</label>
+          <input type="text" id="preference" placeholder="예: 상큼함, 탄산, 논알콜, 과일">
+        </div>
+        <button type="submit" id="submitBtn">추천받기</button>
       </form>
-
-      <div id="loading" class="hidden">AI가 메뉴를 조합하고 있습니다...</div>
-      <div id="error-msg" class="error hidden"></div>
-      <div id="result-box" class="result hidden"></div>
+      <div id="result" class="result hidden"></div>
     </section>
 
-    <!-- 섹션 3: FAQ -->
+    <!-- 3. FAQ 섹션 -->
     <section id="faq" class="card">
       <h2>자주 묻는 질문</h2>
       <details>
@@ -61,6 +63,6 @@
     <p>&copy; 2026 AI Mixologist. All rights reserved.</p>
   </footer>
 
-  <script src="js/app.js"></script>
+  <script src="js/main.js"></script>
 </body>
 </html>
