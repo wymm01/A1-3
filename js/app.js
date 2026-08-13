@@ -42,7 +42,9 @@ document.addEventListener('DOMContentLoaded', () => {
         throw new Error(data.error || 'API 서버 응답 없음');
       }
     } catch (error) {
-      // API 실패 시 자체 추천 레시피 즉시 제공 (fallback)
+  console.error('AI 추천 API 오류:', error);
+
+  // API 실패 시 자체 추천 레시피 즉시 제공 (fallback)
       resultDiv.innerHTML = `
         <div style="background: #f8fafc; border-left: 4px solid #3b82f6; padding: 15px; border-radius: 8px; margin-top: 10px;">
           <h3 style="margin-top:0; color: #1e293b;">🍸 AI 맞춤 음료: [${mood}] 힐링 에이드</h3>
