@@ -39,14 +39,14 @@ class handler(BaseHTTPRequestHandler):
 
             # 3. Gemini 1.5 Flash 모델 호출
             response = client.models.generate_content(
-                model="gemini-1.5-flash",
+                model="gemini-3.6-flash",
                 contents=prompt
             )
 
             self.send_response(200)
             self.send_header('Content-type', 'application/json')
             self.end_headers()
-            self.wfile.write(json.dumps({'result': response.text}).encode('utf-8'))
+            self.wfile.write(json.dumps({'recommendation': response.text}).encode('utf-8'))
 
         except Exception as e:
             # 4. 예외 처리: API/서버 오류 발생시 안내
