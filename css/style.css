@@ -25,3 +25,8 @@ footer { text-align: center; padding: 1.5rem; background: #2c3e50; color: #fff; 
   nav { flex-direction: column; gap: 0.5rem; }
   main { margin: 1rem auto; }
 }
+
+/* 상단 고정 메뉴 때문에 앵커 이동 시 내용이 가려지지 않도록 설정 */
+#about {
+  scroll-margin-top: 100px;
+}
